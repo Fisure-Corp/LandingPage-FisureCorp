@@ -4,7 +4,9 @@ Curso de IHC Y TECNOLOGIAS MOVILES 2025-1, Landing Page del grupo 4
 
 - AlbinoFlorencio Cáceres Pizarro  [u201923820@upc.edu.pe]
 -
--Asto Jacome Jose
+- Asto Jacome Jose Gustavo [u20241c630@upc.edu.edu]
+- Celis Berrospi Eslander [u201911249@upc.edu.pe]
+
 -
 -
 
