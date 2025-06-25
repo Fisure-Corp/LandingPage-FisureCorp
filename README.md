@@ -2,11 +2,12 @@
 Curso de IHC Y TECNOLOGIAS MOVILES 2025-1, Landing Page del grupo 4
 ##  Autores
 
-- AlbinoFlorencio Cáceres Pizarro  [u201923820@upc.edu.pe]
-- Mantilla Maldonado Enrique Manuel [u20231b842@upc.edu.pe]
 - Asto Jacome Jose Gustavo [u20241c630@upc.edu.edu]
+- Briceño De La Cruz Farid Sebastian [u20211f211@upc.edu.pe]
+- Cáceres Pizarro Albino Florencio [u201923820@upc.edu.pe]
 - Celis Berrospi Eslander [u201911249@upc.edu.pe]
 - Guillen Galindo Julio Adolfo [u20241a352@upc.edu.pe]
+- Mantilla Maldonado Enrique Manuel [u20231b842@upc.edu.pe]
 
 ---
 
