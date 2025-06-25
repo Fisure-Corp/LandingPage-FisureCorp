@@ -9,7 +9,7 @@ Curso de IHC Y TECNOLOGIAS MOVILES 2025-1, Landing Page del grupo 4
 - Guillen Galindo Julio Adolfo [u20241a352@upc.edu.pe]
 - Farid Sebastian Briceño De La Cruz [u20211f211@upc.edu.pe]
 ---
-
+git checkout main
 ##  Segmentos objetivo
 
 - Estudiantes universitarios
