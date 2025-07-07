@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alumno</title>
+    <link rel="stylesheet" href="../appstyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      <nav class="top-header">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+        <ul class="menu-vertical">
+          <li><a href="#">Inicio</a></li>
+            <li><a href="familiarPages/perfil.html">Perfil</a></li>
+            <li><a href="familiarPages/ajustes.html">Ajustes</a></li>
+            <li><a href="familiarPages/contacto.html">Contactanos</a></li>
+            <li><a href="../login.html">Cerrar Sesión</a></li>
+        </ul>
+
+        
+      </div>
+    </nav>
+    <section id="inicio" class="familiar-section">
+        <div class="familiar-context">
+            <img src="../imagesApp/familia.jpg" alt="familiar-">
+            <h1>Bienvenido Familiar</h1>
+            <p>Porque sabemos que te preocupas, Bienvenido a Echosafe</p>
+          </div>
+
+      <div class="familiar-container">
+        <h3>Opciones</h3>
+        <div class="familiar-opciones">
+  <div class="boton-opcion" id="contactos" onclick="mostrarSeccion('contactos')">
+    <span class="btn-opcion">Mis contactos</span>
+  </div>
+  <div class="boton-opcion" id="situacion" onclick="mostrarSeccion('situacion')">
+    <span class="btn-opcion">Situación Actual</span>
+  </div>
+  <div class="boton-opcion" id="ubicacionActual" onclick="mostrarSeccion('ubicacion')">
+    <span class="btn-opcion">Ubicación de Contactos</span>
+  </div>
+</div>
+      </div>
+
+    </section >
+    <section id="seccion-contactos" class="seccion oculto">
+  <div class="contactos-top">
+  <button onclick="volverMenu()">Volver</button>
+  <h2>Mis Contactos</h2>
+</div>
+
+      
+      <!-- Área visual del chat -->
+      <div class="chat-container">
+  <!-- Lista de contactos a la izquierda -->
+  <div class="contactos-lista">
+    <div class="contacto-item">
+      <img src="../imagesApp/contacto.png" alt="Contacto 1">
+      <div class="info-persona">
+        <h3>Contacto 1</h3>
+        <p>Jose Gustavo Asto Jacome</p>
+        <p>Última ubicación: Pabellón A</p>
+      </div>
+      
+    </div>
+    <div class="contacto-item">
+      <img src="../imagesApp/contacto.png" alt="Contacto 1">
+      <div class="info-persona">
+        <h3>Contacto 2</h3>
+        <p>Eslander Celis</p>
+        <p>Última ubicación: Pabellón C</p>
+      </div>
+      
+    </div>
+    
+    <!-- Puedes repetir .contacto-item si deseas más contactos -->
+  </div>
+
+  <!-- Chat a la derecha -->
+  <div class="chat-formulario">
+    <h2>Chat</h2>
+    
+    <div class="chat-visual">
+      <h2>Mensajes</h2>
+      <ul id="listaMensajes"></ul>
+    </div>
+    <form id="chatForm">
+      <label for="mensaje">Mensaje:</label>
+      <input type="text" id="mensaje" />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div> 
+    </section>
+
+</div>
+</section>
+    <section id="seccion-situacion" class="seccion oculto">
+        <div class="situacion-top">
+  <button onclick="volverMenu()">Volver</button>
+  <h2>Situacion Actual</h2>
+  </div>  
+  <div class="situacion-container">
+  <div class="situacion-item">
+      <div class="info-situacion">
+        <h3>Estado de la Situación</h3>
+        <p>Estado: Estable</p>
+        <p>Descripción: Se ha reportado un incidente reciente.</p>
+      </div>
+    </div>
+    <div class="chat-container">
+  <!-- Lista de contactos a la izquierda -->
+  <div class="contactos-lista">
+    <div class="contacto-item">
+      <img src="../imagesApp/contacto.png" alt="Contacto 1">
+      <div class="info-persona">
+        <h3>Contacto 1</h3>
+        <p>Jose Gustavo Asto Jacome</p>
+        <div class="estado-persona">
+  <p>
+    Estado:
+    <span class="estado-indicador estado-seguro"></span> Seguro
+  </p>
+</div>
+      </div>
+      
+    </div>
+    <div class="contacto-item">
+      <img src="../imagesApp/contacto.png" alt="Contacto 1">
+      <div class="info-persona">
+        <h3>Contacto 2</h3>
+        <p>Eslander Celis</p>
+        <div class="estado-persona">
+  <p>
+    Estado:
+    <span class="estado-indicador estado-peligro"></span> No habido
+  </p>
+</div>
+
+      </div>
+      
+    </div>
+    
+    <!-- Puedes repetir .contacto-item si deseas más contactos -->
+  </div>
+
+  
+</div> 
+    </section>
+    <section id="seccion-ubicacion" class="seccion oculto">
+<div class="ubicacion-top">
+  <button onclick="volverMenu()">Volver</button>
+  <h2>Ubicacion</h2>
+  </div>
+  <div class="mapa-container">
+  <!-- Lista de contactos a la izquierda -->
+  <div class="contactos-lista">
+    <div class="contacto-item">
+      <img src="../imagesApp/contacto.png" alt="Contacto 1">
+      <div class="info-persona">
+        <h3>Contacto 1</h3>
+        <p>Jose Gustavo Asto Jacome</p>
+        <p>Última ubicación: Pabellón A</p>
+      </div>
+      
+    </div>
+    <div class="contacto-item">
+      <img src="../imagesApp/contacto.png" alt="Contacto 1">
+      <div class="info-persona">
+        <h3>Contacto 2</h3>
+        <p>Eslander Celis</p>
+        <p>Última ubicación: Pabellón C</p>
+      </div>
+      
+    </div>
+    
+    <!-- Puedes repetir .contacto-item si deseas más contactos -->
+  </div>
+
+  <!-- Chat a la derecha -->
+  <div class="mapa-visual">
+    <h2>Mapa</h2>
+    <div class="mapa">
+  <iframe
+    width="100%"
+    height="500"
+    style="border: none; border-radius: 8px;"
+    frameborder="0"
+    scrolling="no"
+    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=UPC%20-%20Campus%20San%20Miguel+(mapa)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+  ></iframe>
+</div>
+</div> 
+    </section>
+    <script src="../appjs/menu.js"></script>
+  </body>
+</html>

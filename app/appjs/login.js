@@ -1,4 +1,3 @@
-
 const form = document.querySelector('form[name="loginForm"]');
 
 form.addEventListener("submit", (event) => {
@@ -9,20 +8,12 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     alert("Por favor, complete todos los campos del formulario");
   } else {
-    const confirmation = confirm(
-      "Está a punto de enviar el formulario, ¿Desea continuar?"
-    );
+    const confirmation = confirm("Está a punto de enviar el formulario, ¿Desea continuar?");
     if (!confirmation) {
       event.preventDefault();
     } else {
       event.preventDefault();
-  
-      setTimeout(() => {
-        mensaje.style.display = "none";
-        window.location.href = "apppages/alumno-index.html";
-      }, 2000);
+      window.location.href = "apppages/alumno-index.html";
     }
   }
 });
-
-
