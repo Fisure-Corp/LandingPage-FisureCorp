@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="appstyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="register-section">
+      <div class="logo-container">
+        <h1>EchoSafe</h1>
+        <img src="imagesApp/logo.png" alt="logo de echosafe">
+      </div>
+
+      <div class="register-container" id="registerContainer">
+        <h2 id="tituloRegistro">Registrarse</h2>
+        <div class="opcion-container" id="opciones">
+          <h4>¿Qué eres?</h4>
+          <div class="opcion">
+            <button type="button" class="btn-alumno" id="btnAlumno">Alumno</button>
+            <button type="button" class="btn-familiar" id="btnFamiliar">Familiar</button>
+          </div>
+        </div>
+        <div>
+        <form id="registerForm" name="registerForm" class="form-container" style="display: none;">
+        <div class="form-group">
+          <div class="form-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre"  />
+            
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email"  />
+            
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" name="contraseña"  />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Registrarse</button>
+          <button type="button" class="btn secondary" id="btnVolver">Volver</button>
+        </div>
+      </form>
+    </div>
+    </div>
+      
+    </section>
+
+    <script src="appjs/register.js"></script>
+  </body>
+</html>
