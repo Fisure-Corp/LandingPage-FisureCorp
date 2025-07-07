@@ -1,3 +1,5 @@
+let tipoUsuario = "";
+
 document.addEventListener("DOMContentLoaded", () => {
   const btnAlumno = document.getElementById("btnAlumno");
   const btnFamiliar = document.getElementById("btnFamiliar");
@@ -7,12 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const titulo = document.getElementById("tituloRegistro");
 
   btnAlumno.addEventListener("click", () => {
+    tipoUsuario = "alumno"; // 👈 guardamos el tipo
     opciones.style.display = "none";
     formulario.style.display = "block";
     titulo.textContent = "Registro de Alumno";
   });
 
   btnFamiliar.addEventListener("click", () => {
+    tipoUsuario = "familiar"; // 👈 guardamos el tipo
     opciones.style.display = "none";
     formulario.style.display = "block";
     titulo.textContent = "Registro de Familiar";
@@ -22,10 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     formulario.style.display = "none";
     opciones.style.display = "block";
     titulo.textContent = "Registrarse";
-    formulario.reset(); // Limpiar campos si deseas
+    formulario.reset();
   });
 });
-
 
 const form = document.querySelector('form[name="registerForm"]');
 
@@ -49,12 +52,18 @@ if (form) {
 
         alert("Formulario enviado correctamente. Redirigiendo...");
 
-        // Simula envío y redirige a otra página
+        // Redirigir dependiendo del tipo de usuario
+        let destino = "dashboard.html"; // fallback
+        if (tipoUsuario === "alumno") {
+          destino = "apppages/alumno-index.html";
+        } else if (tipoUsuario === "familiar") {
+          destino = "apppages/familiar-index.html";
+        }
+
         setTimeout(() => {
-          window.location.href = "dashboard.html";
+          window.location.href = destino;
         }, 2000);
       }
     }
   });
 }
-

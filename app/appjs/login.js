@@ -19,8 +19,8 @@ form.addEventListener("submit", (event) => {
   
       setTimeout(() => {
         mensaje.style.display = "none";
-        window.location.href = "dashboard.html";
-      }, 2000); // Espera 2 segundos antes de redirigir
+        window.location.href = "apppages/alumno-index.html";
+      }, 2000);
     }
   }
 });
