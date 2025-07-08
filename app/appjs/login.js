@@ -1,19 +1,24 @@
 const form = document.querySelector('form[name="loginForm"]');
 
 form.addEventListener("submit", (event) => {
-  const fuser = form.elements["usuario"].value;
+  event.preventDefault(); // Evita el envío por defecto desde el inicio
+
+  const fuser = form.elements["usuario"].value.trim().toLowerCase();
   const fpassword = form.elements["contraseña"].value;
 
   if (!fuser || !fpassword) {
-    event.preventDefault();
     alert("Por favor, complete todos los campos del formulario");
+    return;
+  }
+
+  const confirmation = confirm("Está a punto de enviar el formulario, ¿Desea continuar?");
+  if (!confirmation) return;
+
+  if (fuser === "alumno") {
+    window.location.href = "apppages/alumno-index.html";
+  } else if (fuser === "familiar") {
+    window.location.href = "apppages/familiar-index.html";
   } else {
-    const confirmation = confirm("Está a punto de enviar el formulario, ¿Desea continuar?");
-    if (!confirmation) {
-      event.preventDefault();
-    } else {
-      event.preventDefault();
-      window.location.href = "apppages/alumno-index.html";
-    }
+    alert("Usuario no reconocido. Use 'alumno' o 'familiar'.");
   }
 });
