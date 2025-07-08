@@ -11,25 +11,140 @@
     />
   </head>
   <body>
-      <nav class="top-header">
+    <nav class="top-header">
       <div class="nav-container">
         <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-
         <ul class="menu-vertical">
-          <li><a href="">Inicio</a></li>
-            <li><a href="">Perfil</a></li>
-
+          <li><a href="#">Inicio</a></li>
+          <li><a href="familiarPages/perfil.html">Perfil</a></li>
+          <li><a href="familiarPages/ajustes.html">Ajustes</a></li>
+          <li><a href="familiarPages/contacto.html">Contactanos</a></li>
+          <li><a href="../login.html">Cerrar Sesión</a></li>
         </ul>
-
-        
       </div>
     </nav>
-    <section class="alumno-section">
-      <div class="logo-container">
-        
+
+    <!-- INICIO -->
+    <section id="inicio" class="familiar-section">
+      <div class="familiar-context">
+        <img src="../imagesApp/alumno.jpg" alt="familiar-" />
+        <h1>Bienvenido Alumno</h1>
+        <p>Siempre listo, Bienvenido a Echosafe</p>
       </div>
 
+      <div class="familiar-container">
+        <h3>Opciones</h3>
+        <div class="familiar-opciones">
+          <div class="boton-opcion" id="contactos" onclick="mostrarSeccion('contactos')">
+            <span class="btn-opcion">Mis contactos</span>
+          </div>
+          <div class="boton-opcion" id="situacion" onclick="mostrarSeccion('instrucciones')">
+            <span class="btn-opcion">Instrucciones</span>
+          </div>
+          <div class="boton-opcion" id="ubicacionActual" onclick="mostrarSeccion('ubicacion')">
+            <span class="btn-opcion">Ubicación Actual</span>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- SECCIÓN CONTACTOS -->
+    <section id="seccion-contactos" class="seccion oculto">
+      <div class="contactos-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Mis Contactos</h2>
+      </div>
+
+      <div class="chat-container">
+        <div class="contactos-lista">
+          <div class="contacto-item">
+            <img src="../imagesApp/contacto.png" alt="Contacto 1" />
+            <div class="info-persona">
+              <h3>Contacto 1</h3>
+              <p>Jose Gustavo Asto Jacome</p>
+              <p>Última ubicación: Pabellón A</p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <img src="../imagesApp/contacto.png" alt="Contacto 2" />
+            <div class="info-persona">
+              <h3>Contacto 2</h3>
+              <p>Eslander Celis</p>
+              <p>Última ubicación: Pabellón C</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-formulario">
+          <h2>Chat</h2>
+          <div class="chat-visual">
+            <h2>Mensajes</h2>
+            <ul id="listaMensajes"></ul>
+          </div>
+          <form id="chatForm">
+            <label for="mensaje">Mensaje:</label>
+            <input type="text" id="mensaje" />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN INSTRUCCIONES -->
+    <section id="seccion-instrucciones" class="seccion oculto">
+      <div class="situacion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>🚨 Instrucciones de Evacuación</h2>
+      </div>
+
+      <div class="situacion-container">
+        <div class="situacion-item">
+          <div class="info-situacion">
+            <h3>📍 Ubicación actual: Aula 606</h3>
+            <p><strong>Paso 1:</strong> Mantén la calma y verifica que no haya obstáculos alrededor.</p>
+            <p><strong>Paso 2:</strong> Dirígete hacia la puerta del aula.</p>
+            <p><strong>Paso 3:</strong> Al salir, gira a la <strong>derecha</strong> y camina aproximadamente <strong>5 metros</strong>.</p>
+            <p><strong>Paso 4:</strong> Usa la <strong>puerta de emergencia</strong> indicada con señalización verde.</p>
+            <p><strong>Paso 5:</strong> Desciende con precaución por las <strong>escaleras de emergencia</strong>.</p>
+            <p><strong>Paso 6:</strong> Reúnete con tus compañeros en la <strong>rotonda del campus</strong>, el punto de encuentro oficial.</p>
+          </div>
+        </div>
+
+        <div class="info-extra">
+          <h3>✅ Recomendaciones adicionales</h3>
+          <ul>
+            <li>🔦 Si hay humo, desplázate agachado y cubre tu boca con una prenda.</li>
+            <li>🚷 No uses ascensores bajo ninguna circunstancia.</li>
+            <li>📱 Si es posible, informa tu estado a través de la app.</li>
+            <li>👥 No te separes del grupo al llegar al punto de encuentro.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN UBICACIÓN -->
+    <section id="seccion-ubicacion" class="seccion oculto">
+  <div class="ubicacion-top">
+    <button onclick="volverMenu()">Volver</button>
+    <h2>Ubicación</h2>
+  </div>
+
+  <div class="mapa-container" style="width: 100%; max-width: 900px; margin: auto; padding: 20px;">
+    <div class="mapa-visual" style="text-align: center;">
+      <h3 style="color: white; margin-bottom: 10px;">📍 Usted se encuentra ubicado aquí</h3>
+      <div class="mapa">
+        <iframe
+          width="100%"
+          height="500"
+          style="border: none; border-radius: 8px"
+          frameborder="0"
+          scrolling="no"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=UPC%20-%20Campus%20San%20Miguel+(mapa)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
     <script src="../appjs/menu.js"></script>
   </body>

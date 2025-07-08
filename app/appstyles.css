@@ -358,7 +358,7 @@ body {
 }
 
 #situacion {
-  background-image: url('imagesApp/situacionactual.jpg');
+  background-image: url('imagesApp/instrucciones.jpg');
 }
 
 #ubicacionActual {
@@ -881,4 +881,129 @@ select {
   .situacion-container{
     margin: 0 10px;
   }
+}
+
+/*ALUMNO*/
+
+.pantalla {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pantalla.activa {
+  display: block;
+}
+
+.botones-alumno {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.botones-alumno button {
+  background-color: #004080;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botones-alumno button:hover {
+  background-color: #003366;
+}
+
+.logo-container img {
+  width: 180px;
+  margin-top: 2rem;
+}
+
+
+/*instrucciones*/
+#seccion-instrucciones {
+  padding-top: 7rem; /* Deja espacio para el menú fijo */
+  background-color: #192028;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#seccion-instrucciones .situacion-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  height: 50px;
+  width: 100%;
+}
+
+#seccion-instrucciones .situacion-top button {
+  justify-self: start;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#seccion-instrucciones .situacion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #2b2f38;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#seccion-instrucciones .situacion-item {
+  background-color: #1e1e28;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#seccion-instrucciones .info-situacion h3 {
+  color: #a1c4ff;
+  margin-bottom: 10px;
+}
+
+#seccion-instrucciones .info-situacion p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+#seccion-instrucciones .info-extra {
+  background-color: #1e1e28;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#seccion-instrucciones .info-extra h3 {
+  color: #a1c4ff;
+  margin-bottom: 10px;
+}
+
+#seccion-instrucciones .info-extra ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#seccion-instrucciones .info-extra ul li {
+  padding: 6px 0;
+  font-size: 15px;
+  color: #ccc;
 }
