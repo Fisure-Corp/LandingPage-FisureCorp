@@ -1007,3 +1007,75 @@ select {
   font-size: 15px;
   color: #ccc;
 }
+
+
+.simulacros-section {
+  padding-top: 7rem; /* Deja espacio para el menú fijo */
+  background-color: #192028;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.simulacros-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #2b2f38;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.simulacros-item {
+  background-color: #1e1e28;
+  padding: 20px;
+  border-radius: 8px;
+}
+.simulacros-item h3 {
+  color: #a1c4ff;
+  margin-bottom: 10px;
+}
+.simulacros-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.modo-emergencia {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff0000;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.modo-emergencia-btn{
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.modo-emergencia a{
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: 50px;
+}
+.modo-emergencia:hover {
+  background-color: #cc0000;
+}
+.modo-emergencia:active {
+  background-color: #990000;
+}

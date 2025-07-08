@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="emergencia.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="emergencia.js"></script>
+  </head>
+
+  <body>
+    <!-- SECCIÓN ALERTA SÍSMICA -->
+<section id="seccion-principal" class="alerta-sismo">
+  <div class="alerta">
+    <h1>¡ALERTA!</h1>
+    <h2>SISMO INMINENTE</h2>
+
+    <button class="boton-ayuda">¡AYUDA!</button>
+    <button class="boton-estoybien">Estoy bien</button>
+
+    <div class="informacion">
+      <h3>Estado</h3>
+      <p>Se publicará en su estado</p>
+    </div>
+
+    <button class="boton-ubicacion">Ubicacion</button>
+    <button class="boton-chat">Chat</button>
+  </div>
+</section>
+    <section id="seccion-ubicacion" class="seccion oculto">
+  <button onclick="volverMenu()">Volver</button>
+  <h2>📍 Ubicación actual</h2>
+  <p><strong>Aula 606, Campus San Miguel</strong></p>
+  <iframe
+    src="https://maps.google.com/maps?q=UPC%20-%20Campus%20San%20Miguel&t=k&z=17&ie=UTF8&iwloc=&output=embed"
+    style="width:100%; height:250px; border-radius:10px; border:none;"
+  ></iframe>
+
+  <div>
+    <h3 style="font-size: 1.2rem;">🚪 Rutas de Escape</h3>
+    <ul style="font-size: 1.2rem;">
+      <li><strong>Pabellón A:</strong> Salida principal</li>
+      <li><strong>Pabellón B:</strong> Patio central</li>
+      <li><strong>Pabellón C:</strong> Sótano</li>
+      <li><strong>Pabellón D:</strong> Calle principal</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECCIÓN CHAT -->
+<section id="seccion-chat" class="seccion oculto simulacros-section">
+  <div class="contactos-top">
+    <button onclick="volverMenu()">Volver</button>
+    <h2>Chat de emergencia</h2>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-formulario">
+      <p>Estos mensajes se enviarán a todos tus contactos</p>
+
+      <form onsubmit="enviarMensaje(event)">
+        <input type="text" id="mensajeChat" placeholder="Mensaje..." />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div class="chat-visual">
+        <ul id="listaMensajes"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+  </body>
+</html>
