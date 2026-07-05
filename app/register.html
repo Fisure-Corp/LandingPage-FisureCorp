@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="appstyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="register-section">
+      <div class="logo-container">
+        <h1>ExtorPrev</h1>
+        <img src="imagesApp/logoApp.png" alt="logo de extorprev">
+      </div>
+
+      <div class="register-container" id="registerContainer">
+        <h2 id="tituloRegistro">Registrarse</h2>
+        <div class="opcion-container" id="opciones">
+          <h4>Elije una opción</h4>
+          <div class="opcion">
+            <button type="button" class="btn-pasajero" id="btnPasajero">Pasajero<img src="imagesApp/pasajerobtn.jpg" alt="imagen de pasajero"></button>
+            <button type="button" class="btn-conductor" id="btnConductor">Conductor<img src="imagesApp/conductorbtn.jpg" alt="imagen de conductor"></button>
+          </div>
+        </div>
+        <div>
+        <form id="registerForm" name="registerForm" class="form-container" style="display: none;">
+        <div class="form-group">
+          <div class="form-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre"  />
+            
+            <label for="apellidos" class="campo-pasajero">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" class="campo-pasajero"  />
+            
+            <label for="apellido" class="campo-conductor">Apellido</label>
+            <input type="text" id="apellido" name="apellido" class="campo-conductor"  />
+            
+            <label for="ocupacion" class="campo-pasajero">Ocupacion</label>
+            <input type="text" id="ocupacion" name="ocupacion" class="campo-pasajero"  />
+            
+            <label for="modeloCarro" class="campo-conductor">Modelo carro</label>
+            <input type="text" id="modeloCarro" name="modeloCarro" class="campo-conductor"  />
+            
+            <label for="placa" class="campo-conductor">Placa</label>
+            <input type="text" id="placa" name="placa" class="campo-conductor"  />
+            
+            <label for="celular">Celular</label>
+            <input type="tel" id="celular" name="celular"  />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Registrarse</button>
+          <button type="button" class="btn secondary" id="btnVolver">Volver</button>
+        </div>
+      </form>
+    </div>
+    </div>
+      
+    </section>
+
+    <script src="appjs/register.js"></script>
+  </body>
+</html>

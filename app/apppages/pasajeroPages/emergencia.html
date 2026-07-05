@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergencia ExtorPrev</title>
+    <link rel="stylesheet" href="emergencia.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet" />
+    <script defer src="emergencia.js"></script>
+  </head>
+  <body>
+    <section id="seccion-principal" class="alerta-seguridad">
+      <div class="alerta">
+        <h1>ALERTA DE SEGURIDAD</h1>
+        <h2>Zona peligrosa cercana</h2>
+        <button class="boton-ayuda">Enviar SOS</button>
+        <button class="boton-estoybien">Confirmar llegada segura</button>
+        <div class="informacion">
+          <h3>Monitoreo activo</h3>
+          <p>La alerta se enviara a tus contactos de confianza con tu ubicacion actual.</p>
+        </div>
+        <button class="boton-ubicacion">Ver ubicacion</button>
+        <button class="boton-chat">Mensaje a contactos</button>
+        <a class="back-link" href="../pasajero-index.html">Volver al inicio</a>
+      </div>
+    </section>
+
+    <section id="seccion-ubicacion" class="seccion oculto">
+      <button onclick="volverMenu()">Volver</button>
+      <h2>Ubicacion en tiempo real</h2>
+      <p><strong>Av. La Marina, San Miguel</strong></p>
+      <iframe
+        src="https://maps.google.com/maps?q=UPC%20-%20Campus%20San%20Miguel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+        style="width:100%; height:250px; border-radius:10px; border:none;"
+      ></iframe>
+      <div>
+        <h3>Acciones automaticas</h3>
+        <ul>
+          <li>Compartir ruta en vivo con contactos.</li>
+          <li>Detectar detenciones prolongadas en zona de riesgo.</li>
+          <li>Recomendar paradero seguro mas cercano.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="seccion-chat" class="seccion oculto simulacros-section">
+      <div class="contactos-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Mensaje de emergencia</h2>
+      </div>
+      <div class="chat-container">
+        <div class="chat-formulario">
+          <p>Estos mensajes se enviaran a todos tus contactos de confianza.</p>
+          <form onsubmit="enviarMensaje(event)">
+            <input type="text" id="mensajeChat" placeholder="Mensaje..." />
+            <button type="submit">Enviar</button>
+          </form>
+          <div class="chat-visual">
+            <ul id="listaMensajes"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajustes Pasajero</title>
+    <link rel="stylesheet" href="../../appstyles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="top-header">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="menu-vertical">
+          <li><a href="../pasajero-index.html">Inicio</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="rutasFrecuentes.html">Rutas frecuentes</a></li>
+          <li><a href="#">Ajustes</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="../../login.html">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section id="ajustes" class="ajustes-section">
+      <div class="ajustes-container wide-settings">
+        <h2>Preferencias de seguridad de pasajero</h2>
+        <div class="form-group">
+          <label>Alertas relevantes</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" checked /> Incidentes cercanos a mi ubicacion</label>
+            <label><input type="checkbox" checked /> Zonas peligrosas en mi ruta</label>
+            <label><input type="checkbox" checked /> Detenciones prolongadas en zona de riesgo</label>
+            <label><input type="checkbox" /> Noticias generales de seguridad</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Modo de notificacion</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" checked /> Vibracion silenciosa</label>
+            <label><input type="checkbox" checked /> Notificacion discreta</label>
+            <label><input type="checkbox" /> Sonido de emergencia</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bateria">Ahorro de bateria</label>
+          <select id="bateria">
+            <option>Activar en trayectos mayores a 45 min</option>
+            <option>Siempre activo</option>
+            <option>Desactivado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Privacidad del perfil</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" checked /> Compartir ubicacion solo con mis contactos</label>
+            <label><input type="checkbox" checked /> Confirmar llegada segura automaticamente</label>
+            <label><input type="checkbox" /> Permitir que otros vean mis validaciones</label>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../../appjs/menu.js"></script>
+  </body>
+</html>

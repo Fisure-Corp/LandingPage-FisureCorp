@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExtorPrev Conductor</title>
+    <link rel="stylesheet" href="../appstyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="top-header">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="menu-vertical">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="conductorPages/perfil.html">Perfil</a></li>
+          <li><a href="conductorPages/ajustes.html">Ajustes</a></li>
+          <li><a href="conductorPages/contacto.html">Contactos</a></li>
+          <li><a href="../login.html">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="inicio" class="conductor-section app-dashboard">
+      <div class="panel-principal">
+        <div>
+          <p class="subtitulo">Monitoreo preventivo para transporte urbano</p>
+          <h1>Bienvenido, conductor</h1>
+          <p>
+            Consulta zonas de riesgo, recibe alertas antes y durante tu ruta, y reporta
+            incidentes anonimamente para proteger a otros usuarios.
+          </p>
+        </div>
+        <div class="lista-estados">
+          <span class="estado-alerta high">Riesgo alto: Av. Abancay</span>
+          <span class="estado-alerta medium">Actualizado hace <strong id="liveTimer">12 s</strong></span>
+          <span class="estado-alerta low">Bluetooth vehicular conectado</span>
+        </div>
+      </div>
+
+      <div class="resumen-grid">
+        <article class="resumen-card">
+          <span>Incidentes recientes</span>
+          <strong>18</strong>
+          <p>En rutas habituales durante las ultimas 24 h.</p>
+        </article>
+        <article class="resumen-card">
+          <span>Ruta sugerida</span>
+          <strong>74%</strong>
+          <p>Menor exposicion frente a avenidas con reportes.</p>
+        </article>
+        <article class="resumen-card">
+          <span>Contactos activos</span>
+          <strong>4</strong>
+          <p>Disponibles para alertas rapidas de emergencia.</p>
+        </article>
+      </div>
+
+      <div class="conductor-container">
+        <h2>Funciones del conductor</h2>
+        <div class="conductor-opciones opciones-dashboard">
+          <button class="boton-opcion" id="mapaRiesgo" onclick="mostrarSeccion('mapa')">
+            <span class="btn-opcion">Mapa de riesgo</span>
+          </button>
+          <button class="boton-opcion" id="rutasSeguras" onclick="mostrarSeccion('rutas')">
+            <span class="btn-opcion">Rutas seguras</span>
+          </button>
+          <button class="boton-opcion" id="reportarIncidente" onclick="mostrarSeccion('reportes')">
+            <span class="btn-opcion">Reportar incidente</span>
+          </button>
+          <button class="boton-opcion" id="contactosEmergencia" onclick="mostrarSeccion('contactos')">
+            <span class="btn-opcion">Contactos de confianza</span>
+          </button>
+          <button class="boton-opcion" id="historialIncidentes" onclick="mostrarSeccion('historial')">
+            <span class="btn-opcion">Historial y alertas</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="seccion-mapa" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Mapa de calor e incidentes recientes</h2>
+      </div>
+      <div class="mapa-grid">
+        <aside class="controles-mapa">
+          <label for="riskTime">Filtrar horario</label>
+          <select id="riskTime" data-risk-filter>
+            <option value="noche">Noche</option>
+            <option value="tarde">Tarde</option>
+            <option value="manana">Manana</option>
+          </select>
+          <label for="avenida">Avenida especifica</label>
+          <select id="avenida">
+            <option>Av. Abancay</option>
+            <option>Av. Javier Prado</option>
+            <option>Av. Universitaria</option>
+            <option>Via Evitamiento</option>
+          </select>
+          <button class="boton-principal" data-refresh-risk>Actualizar en tiempo real</button>
+          <p class="texto-pequeno">Ultima actualizacion: <strong data-live-clock>12:30 p.m.</strong></p>
+        </aside>
+        <div class="mapa-riesgo pasajero-map">
+          <img src="../imagesApp/mapaCalor.jpg"
+               alt="Mapa de calor de zonas de riesgo"
+               class="imagen-mapa">
+        </div>
+
+      </div>
+      <div class="lista-incidentes">
+        <article>
+          <strong>Av. Abancay, Cercado</strong>
+          <span>Hace 8 min - amenaza a cobrador - 12 confirmaciones</span>
+        </article>
+        <article>
+          <strong>Av. Javier Prado, La Victoria</strong>
+          <span>Hace 21 min - cobro extorsivo reportado - 7 confirmaciones</span>
+        </article>
+        <article>
+          <strong>Via Evitamiento, El Agustino</strong>
+          <span>Hace 34 min - zona con detenciones sospechosas - 4 confirmaciones</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="seccion-rutas" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Rutas seguras y recalculo automatico</h2>
+      </div>
+      <div class="rutas-comparacion">
+        <article class="ruta-card selected">
+          <h3>Ruta A: Grau - Brasil - La Marina</h3>
+          <p>Nivel de riesgo bajo, evita Av. Abancay y zonas con reportes recientes.</p>
+          <strong>32 min</strong>
+          <button class="boton-principal" data-route-select>Iniciar monitoreo</button>
+        </article>
+        <article class="ruta-card">
+          <h3>Ruta B: Abancay - Arequipa</h3>
+          <p>Riesgo alto por 3 incidentes en la ultima hora.</p>
+          <strong>25 min</strong>
+          <button data-route-select>Comparar</button>
+        </article>
+        <article class="ruta-card">
+          <h3>Ruta C: Evitamiento - Canada</h3>
+          <p>Riesgo medio con alertas visuales antes de intersecciones criticas.</p>
+          <strong>29 min</strong>
+          <button data-route-select>Comparar</button>
+        </article>
+      </div>
+      <div class="aviso-alerta">
+        Incidente detectado a 450 m. La aplicacion recalculo una alternativa por Av. Brasil.
+      </div>
+    </section>
+
+    <section id="seccion-reportes" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Reporte anonimo de inseguridad</h2>
+      </div>
+      <form class="report-form" data-report-form>
+        <label>Tipo de incidente
+          <select required>
+            <option>Extorsion</option>
+            <option>Amenaza</option>
+            <option>Robo en ruta</option>
+            <option>Zona sospechosa</option>
+          </select>
+        </label>
+        <label>Ubicacion detectada
+          <input value="Av. Abancay cdra. 7, Cercado de Lima" required />
+        </label>
+        <label>Descripcion
+          <textarea placeholder="Describe lo ocurrido sin colocar datos personales"></textarea>
+        </label>
+        <label>Evidencia
+          <input type="file" accept="image/*,video/*" />
+        </label>
+        <label class="check-row">
+          <input type="checkbox" checked /> Enviar como anonimo
+        </label>
+        <button class="boton-principal" type="submit">Enviar reporte</button>
+      </form>
+      <p class="form-result" data-report-result></p>
+    </section>
+
+    <section id="seccion-contactos" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Contactos de confianza y emergencia</h2>
+      </div>
+      <div class="contactos-seguridad">
+        <article class="contacto-card">
+          <img src="../imagesApp/contacto.png" alt="Contacto de emergencia" />
+          <div>
+            <h3>Maria Torres</h3>
+            <p>Hermana - disponible</p>
+          </div>
+          <button data-share-location>Enviar ubicacion</button>
+        </article>
+        <article class="contacto-card">
+          <img src="../imagesApp/contacto.png" alt="Contacto de emergencia" />
+          <div>
+            <h3>Central de ruta</h3>
+            <p>Operaciones - monitoreo activo</p>
+          </div>
+          <button data-emergency-alert>Alerta rapida</button>
+        </article>
+      </div>
+      <div class="aviso-alerta neutral" data-contact-result>
+        Puedes compartir ubicacion en tiempo real o enviar una alerta inmediata.
+      </div>
+    </section>
+
+    <section id="seccion-historial" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Historial, rutas frecuentes y alertas</h2>
+      </div>
+      <div class="historial-grid">
+        <article>
+          <h3>Ruta frecuente guardada</h3>
+          <p>San Juan de Lurigancho - Cercado - San Miguel</p>
+          <span>Monitoreo automatico activo</span>
+        </article>
+        <article>
+          <h3>Reporte enviado</h3>
+          <p>Av. Javier Prado, 04/07/2026, 8:42 p.m.</p>
+          <span>Validado por 9 usuarios</span>
+        </article>
+        <article>
+          <h3>Preferencia de alerta</h3>
+          <p>Visual + audio por Bluetooth, vibracion desactivada.</p>
+          <span>Modo conductor</span>
+        </article>
+      </div>
+    </section>
+
+    <script src="../appjs/menu.js"></script>
+  </body>
+</html>

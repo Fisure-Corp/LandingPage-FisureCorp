@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactos Pasajero</title>
+    <link rel="stylesheet" href="../../appstyles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="top-header">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="menu-vertical">
+          <li><a href="../pasajero-index.html">Inicio</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="rutasFrecuentes.html">Rutas frecuentes</a></li>
+          <li><a href="ajustes.html">Ajustes</a></li>
+          <li><a href="#">Contactos</a></li>
+          <li><a href="../../login.html">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section id="contactanos" class="contactanos-section">
+      <div class="contactanos-container support-network">
+        <h2>Contactos de confianza</h2>
+        <div class="contactanos-item">
+          <img src="../../imagesApp/contacto.png" alt="Papa" />
+          <span>Papa - seguimiento en vivo</span>
+          <button class="contactanos-icono" title="Compartir ubicacion">&#10148;</button>
+        </div>
+        <div class="contactanos-item">
+          <img src="../../imagesApp/contacto.png" alt="Mama" />
+          <span>Mama - llegada segura</span>
+          <button class="contactanos-icono" title="Avisar llegada">&#10003;</button>
+        </div>
+        <div class="contactanos-item">
+          <img src="../../imagesApp/contacto.png" alt="Amiga cercana" />
+          <span>Lucia - acompanamiento</span>
+          <button class="contactanos-icono" title="Enviar alerta">&#9888;</button>
+        </div>
+        <form class="mini-form">
+          <label>Agregar contacto de confianza</label>
+          <input placeholder="Nombre y telefono" />
+          <button type="button">Guardar contacto</button>
+        </form>
+        <p class="contactanos-mensaje">Tu ubicacion solo se comparte cuando activas monitoreo o emergencia.</p>
+      </div>
+    </section>
+    <script src="../../appjs/menu.js"></script>
+  </body>
+</html>

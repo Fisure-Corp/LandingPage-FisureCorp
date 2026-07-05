@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajustes Conductor</title>
+    <link rel="stylesheet" href="../../appstyles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="top-header">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="menu-vertical">
+          <li><a href="../conductor-index.html">Inicio</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="#">Ajustes</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="../../login.html">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section id="ajustes" class="ajustes-section">
+      <div class="ajustes-container wide-settings">
+        <h2>Preferencias de seguridad del conductor</h2>
+        <div class="form-group">
+          <label for="alerta">Tipo de alertas durante la jornada</label>
+          <select id="alerta">
+            <option>Visual + audio Bluetooth</option>
+            <option>Solo visual</option>
+            <option>Audio por telefono</option>
+            <option>Vibracion discreta</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Notificaciones preventivas</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" checked /> Antes de iniciar el trayecto</label>
+            <label><input type="checkbox" checked /> Al aproximarme a zonas peligrosas</label>
+            <label><input type="checkbox" checked /> Si aparece un incidente cerca de mi ruta</label>
+            <label><input type="checkbox" /> Alertas de otros distritos</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Privacidad</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" checked /> Reportar incidentes anonimamente</label>
+            <label><input type="checkbox" checked /> Compartir ubicacion solo con contactos de confianza</label>
+            <label><input type="checkbox" /> Mostrar mi nombre en validaciones</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bluetooth">Bluetooth vehicular</label>
+          <select id="bluetooth">
+            <option>Sincronizado con parlante del vehiculo</option>
+            <option>Buscar nuevo dispositivo</option>
+            <option>Desactivar durante esta jornada</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <script src="../../appjs/menu.js"></script>
+  </body>
+</html>

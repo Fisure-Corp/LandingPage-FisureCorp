@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExtorPrev Pasajero</title>
+    <link rel="stylesheet" href="../appstyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="top-header">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="menu-vertical">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="pasajeroPages/perfil.html">Perfil</a></li>
+          <li><a href="pasajeroPages/rutasFrecuentes.html">Rutas frecuentes</a></li>
+          <li><a href="pasajeroPages/ajustes.html">Ajustes</a></li>
+          <li><a href="pasajeroPages/contacto.html">Contactos</a></li>
+          <li><a href="../login.html">Cerrar Sesion</a></li>
+        </ul>
+        <div class="modo-emergencia">
+          <button class="modo-emergencia-btn">
+            <a href="pasajeroPages/emergencia.html" aria-label="Emergencia">&#9888;</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="inicio" class="conductor-section app-dashboard">
+      <div class="panel-principal pasajero-hero">
+        <div>
+          <p class="subtitulo">Acompanamiento seguro para pasajeros</p>
+          <h1>Bienvenido Pasajero</h1>
+          <p>
+            Filtra el mapa por horario, compara rutas hacia tu universidad,
+            recibe alertas silenciosas y comparte tu ubicacion con contactos de confianza.
+          </p>
+        </div>
+        <div class="lista-estados">
+          <span class="estado-alerta high">Alerta cercana: Av. Universitaria</span>
+          <span class="estado-alerta medium">Vibracion silenciosa activa</span>
+          <span class="estado-alerta low">Llegada segura: pendiente</span>
+        </div>
+      </div>
+
+      <div class="resumen-grid">
+        <article class="resumen-card">
+          <span>Reportes cercanos</span>
+          <strong>6</strong>
+          <p>A menos de 900 m de tu ubicacion actual.</p>
+        </article>
+        <article class="resumen-card">
+          <span>Paraderos seguros</span>
+          <strong>4</strong>
+          <p>Iluminados, concurridos y con baja incidencia.</p>
+        </article>
+        <article class="resumen-card">
+          <span>Bateria estimada</span>
+          <strong>5 h</strong>
+          <p>Modo ahorro recomendado para trayectos largos.</p>
+        </article>
+      </div>
+
+      <div class="conductor-container">
+        <h2>Funciones de pasajero</h2>
+        <div class="conductor-opciones opciones-dashboard">
+          <button class="boton-opcion" id="mapaRiesgo" onclick="mostrarSeccion('mapa')">
+            <span class="btn-opcion">Mapa y alertas</span>
+          </button>
+          <button class="boton-opcion" id="rutasSeguras" onclick="mostrarSeccion('rutas')">
+            <span class="btn-opcion">Comparar rutas</span>
+          </button>
+          <button class="boton-opcion" id="paraderosSeguros" onclick="mostrarSeccion('paraderos')">
+            <span class="btn-opcion">Paraderos seguros</span>
+          </button>
+          <button class="boton-opcion" id="validarReportes" onclick="mostrarSeccion('validacion')">
+            <span class="btn-opcion">Validar reportes</span>
+          </button>
+          <button class="boton-opcion" id="contactosEmergencia" onclick="mostrarSeccion('contactos')">
+            <span class="btn-opcion">Compartir ubicacion</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="seccion-mapa" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Mapa filtrado por horario</h2>
+      </div>
+      <div class="mapa-grid">
+        <aside class="controles-mapa">
+          <label for="pasajeroRiskTime">Horario de desplazamiento</label>
+          <select id="pasajeroRiskTime" data-risk-filter>
+            <option value="manana">Manana</option>
+            <option value="tarde">Tarde</option>
+            <option value="noche">Noche</option>
+          </select>
+          <label class="check-row">
+            <input type="checkbox" checked /> Alertas por vibracion
+          </label>
+          <label class="check-row">
+            <input type="checkbox" checked /> Notificaciones silenciosas
+          </label>
+          <label class="check-row">
+            <input type="checkbox" /> Modo ahorro de bateria
+          </label>
+          <button class="boton-principal" data-refresh-risk>Actualizar riesgos cercanos</button>
+        </aside>
+        <div class="mapa-riesgo pasajero-map">
+          <img src="../imagesApp/mapaCalor.jpg"
+               alt="Mapa de calor de zonas de riesgo"
+               class="imagen-mapa">
+        </div>
+      </div>
+      <div class="aviso-alerta">
+        Te acercas a una zona con reportes recientes. Sugerencia: descender en paradero Plaza San Miguel.
+      </div>
+    </section>
+
+    <section id="seccion-rutas" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Comparacion de rutas hacia tu destino</h2>
+      </div>
+      <div class="rutas-comparacion">
+        <article class="ruta-card selected">
+          <h3>Ruta segura: La Marina - Faucett</h3>
+          <p>Riesgo bajo, paraderos iluminados y mayor presencia peatonal.</p>
+          <strong>36 min</strong>
+          <button class="boton-principal" data-route-select>Elegir</button>
+        </article>
+        <article class="ruta-card">
+          <h3>Ruta rapida: Universitaria</h3>
+          <p>Riesgo alto por incidentes recientes a la altura de Colonial.</p>
+          <strong>28 min</strong>
+          <button data-route-select>Comparar</button>
+        </article>
+        <article class="ruta-card">
+          <h3>Ruta alternativa: Brasil - Ejercito</h3>
+          <p>Riesgo medio, recomendado solo antes de las 7 p.m.</p>
+          <strong>34 min</strong>
+          <button data-route-select>Comparar</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="seccion-paraderos" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Paraderos seguros cercanos</h2>
+      </div>
+      <div class="historial-grid">
+        <article>
+          <h3>Paradero Plaza San Miguel</h3>
+          <p>280 m - iluminacion alta - vigilancia cercana.</p>
+          <span>Riesgo bajo</span>
+        </article>
+        <article>
+          <h3>Paradero UPC San Miguel</h3>
+          <p>410 m - alto flujo de pasajeros - reportes bajos.</p>
+          <span>Recomendado</span>
+        </article>
+        <article>
+          <h3>Paradero La Marina</h3>
+          <p>650 m - riesgo medio por horario nocturno.</p>
+          <span>Usar solo acompanada</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="seccion-validacion" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Validar reportes de la comunidad</h2>
+      </div>
+      <div class="lista-incidentes validation-list">
+        <article>
+          <strong>Av. Universitaria con Colonial</strong>
+          <span>Reporte hace 11 min: grupo sospechoso cerca al paradero.</span>
+          <div>
+            <button data-validate-report>Confirmar</button>
+            <button data-discard-report>Descartar</button>
+          </div>
+        </article>
+        <article>
+          <strong>Av. La Marina cdra. 22</strong>
+          <span>Reporte hace 18 min: intento de robo a pasajera.</span>
+          <div>
+            <button data-validate-report>Confirmar</button>
+            <button data-discard-report>Descartar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="seccion-contactos" class="seccion oculto seccion-seguridad">
+      <div class="seccion-top">
+        <button onclick="volverMenu()">Volver</button>
+        <h2>Ubicacion en tiempo real y llegada segura</h2>
+      </div>
+      <div class="contactos-seguridad">
+        <article class="contacto-card">
+          <img src="../imagesApp/contacto.png" alt="Contacto de confianza" />
+          <div>
+            <h3>Papa</h3>
+            <p>Recibe ruta en vivo hasta la universidad.</p>
+          </div>
+          <button data-share-location>Compartir en vivo</button>
+        </article>
+        <article class="contacto-card">
+          <img src="../imagesApp/contacto.png" alt="Contacto de confianza" />
+          <div>
+            <h3>Mama</h3>
+            <p>Confirmacion automatica al llegar.</p>
+          </div>
+          <button data-safe-arrival>Confirmar llegada</button>
+        </article>
+      </div>
+      <div class="aviso-alerta neutral" data-contact-result>
+        La app avisara si detecta detenciones prolongadas en zona peligrosa.
+      </div>
+    </section>
+
+    <script src="../appjs/menu.js"></script>
+  </body>
+</html>
